@@ -1,3 +1,230 @@
-body {
-    color: orangered;
+* {
+  margin: 0;
+  padding: 0;
 }
+
+:root {
+  font-size: 1rem;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #030206;
+  width: 100%;
+  background-image: url(assets/back.jpg);
+  background-repeat: repeat-y;
+  background-size: 100%;
+}
+
+.astronaut {
+  position: absolute;
+  margin-left: 40vw;
+  margin-top: 50vh;
+  width: 20%;
+  z-index: 2;
+}
+
+.links {
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  background-color: #0f0c25;
+}
+.links-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #030206;
+  width: 100%;
+  min-height: 5rem;
+  max-height: 10rem;
+  flex-wrap: wrap;
+}
+.links-list li {
+  list-style-type: none;
+}
+.links-list li a {
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+.links-list li a:active {
+  color: aliceblue;
+}
+.links-list li a:visited {
+  color: aliceblue;
+}
+.links-list li a:hover {
+  font-size: 2.5rem;
+}
+
+.page {
+  z-index: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.page-first {
+  height: 75vh;
+  display: flex;
+}
+.page-first .info {
+  background: aliceblue;
+  margin-top: 5rem;
+  width: 50%;
+}
+.page-first .info h1 {
+  padding-left: 2rem;
+  padding-top: 2rem;
+  font-size: 3rem;
+}
+.page-first .info hr {
+  width: 12.3rem;
+  margin-left: 2rem;
+  border: 3px dashed black;
+}
+.page-first .info p {
+  padding: 2rem;
+}
+.page-first .planets {
+  margin-top: 5rem;
+  width: 50%;
+  height: 75%;
+}
+.page-first .planets .first {
+  position: relative;
+  transform: translateY(10rem) translateX(8rem);
+  width: 20vw;
+  transition: all 2s ease-in-out;
+  z-index: 0;
+}
+.page-first .planets .second {
+  position: relative;
+  width: 15vw;
+  transform: translateY(-5rem) translateX(5rem);
+  transition: all 2s ease-in-out;
+  z-index: 1;
+  filter: drop-shadow(5px 10px 5px black);
+}
+.page-first .planets:hover .first {
+  transform: translateY(-5rem) translateX(20rem);
+  width: 15vw;
+}
+.page-first .planets:hover .second {
+  width: 20vw;
+  transform: translateY(8rem) translateX(-10rem);
+}
+.page-second {
+  display: flex;
+}
+.page-second .video {
+  grid-area: video;
+  width: 50%;
+  height: 100%;
+  background: black;
+}
+.page-second .about {
+  background: aliceblue;
+  width: 50%;
+}
+.page-second .about h1 {
+  padding-left: 2rem;
+  padding-top: 2rem;
+  font-size: 3rem;
+}
+.page-second .about hr {
+  width: 12.3rem;
+  margin-left: 2rem;
+  border: 3px dashed black;
+}
+.page-second .about p {
+  padding: 2rem;
+}
+.page-third {
+  display: flex;
+  flex-direction: row;
+}
+.page-third .continue {
+  width: 50%;
+  background: aliceblue;
+}
+.page-third .continue h1 {
+  padding-left: 2rem;
+  padding-top: 2rem;
+  font-size: 3rem;
+}
+.page-third .continue hr {
+  width: 12.3rem;
+  margin-left: 2rem;
+  border: 3px dashed black;
+}
+.page-third .continue p {
+  padding: 2rem;
+}
+.page-third .galaxy-container {
+  width: 50%;
+}
+.page-third .galaxy-container .galaxy {
+  margin-left: 25%;
+  width: 52%;
+  margin-top: 2.5rem;
+  animation: galaxy 10s infinite linear;
+}
+.page .ticker {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(235, 246, 255);
+  font-size: 8rem;
+  width: 100%;
+  height: 9rem;
+  z-index: 0;
+  border-top: 1rem solid rgb(0, 0, 0);
+  border-bottom: 1rem solid rgb(0, 0, 0);
+  align-items: center;
+  font-family: "Dhurjati", sans-serif;
+}
+.page .ticker-container {
+  display: flex;
+}
+.page .ticker-container .text {
+  position: relative;
+  animation: text 3s infinite linear;
+  max-height: 25vh;
+  margin-top: -4rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-left: 2rem;
+}
+
+.footer {
+  background: #030206;
+  color: aliceblue;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes text {
+  0% {
+    transform: translateZ(0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes galaxy {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,240 @@
+$color: aliceblue;
+$background: #030206;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 1rem;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: $background;
+    width: 100%;
+    background-image: url(assets/back.jpg);
+    background-repeat: repeat-y;
+    background-size: 100%;
+}
+
+.astronaut {
+    position: absolute;
+    margin-left: 40vw;
+    margin-top: 50vh;
+    width: 20%;
+    z-index: 2;
+}
+
+.links {
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    background-color: #0f0c25;
+    &-list {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: $background;
+        width: 100%;
+        min-height: 5rem;
+        max-height: 10rem;
+        flex-wrap: wrap;
+        li {
+            list-style-type: none;
+            a {
+                text-decoration: none;
+                color: $color;
+                font-size: 2rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-weight: 600;
+                transition: all 0.3s ease-in-out;
+                outline: none;
+                &:active {
+                    color: $color;
+                }
+                &:visited {
+                    color: $color;
+                }
+                &:hover {
+                    font-size: 2.5rem;
+                }
+            }
+        }    
+    }
+}
+
+.page {
+    z-index: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    &-first {
+        height: 75vh;
+        display: flex;
+        .info {
+            background: $color;
+            margin-top: 5rem;
+            width: 50%;
+            h1 {
+                padding-left: 2rem;
+                padding-top: 2rem;
+                font-size: 3rem;
+            }
+            hr {
+                width: 12.3rem;
+                margin-left: 2rem;
+                border: 3px dashed black;
+            }
+            p {
+                padding: 2rem;
+            }
+        }
+        .planets {
+            margin-top: 5rem;
+            width: 50%;
+            height: 75%;
+            .first {
+                position: relative;
+                transform: translateY(10rem) translateX(8rem);
+                width: 20vw;
+                transition: all 2s ease-in-out;
+                z-index: 0;
+            }
+            .second {
+                position: relative;
+                width: 15vw;
+                transform:  translateY(-5rem) translateX(5rem);
+                transition: all 2s ease-in-out;
+                z-index: 1;
+                filter: drop-shadow(5px 10px 5px black);
+            }
+            &:hover {
+                .first {
+                    transform: translateY(-5rem) translateX(20rem);
+                    width: 15vw;
+                }
+                .second {
+                    width: 20vw;
+                    transform:  translateY(8rem) translateX(-10rem);
+                }
+            }
+        }
+    }
+
+    &-second {
+        display: flex;
+        .video {
+            grid-area: video;
+            width: 50%;
+            height: 100%;
+            background: black;
+        }
+        .about {
+
+            background: $color;
+            width: 50%;
+            h1 {
+                padding-left: 2rem;
+                padding-top: 2rem;
+                font-size: 3rem;
+            }
+            hr {
+                width: 12.3rem;
+                margin-left: 2rem;
+                border: 3px dashed black;
+            }
+            p {
+                padding: 2rem;
+            }
+        }
+    }
+
+    &-third {
+        display: flex;
+        flex-direction: row;
+        .continue {
+            width: 50%;
+            background: $color;
+            h1 {
+                padding-left: 2rem;
+                padding-top: 2rem;
+                font-size: 3rem;
+            }
+            hr {
+                width: 12.3rem;
+                margin-left: 2rem;
+                border: 3px dashed black;
+            }
+            p {
+                padding: 2rem;
+            }
+        }
+        .galaxy-container {
+    
+            width: 50%;
+            .galaxy {
+                margin-left: 25%;
+                width: 52%;
+                margin-top: 2.5rem;
+                animation: galaxy 10s infinite linear;
+            }
+        }
+    }
+
+    .ticker {
+        position: relative;
+        overflow: hidden;
+        background-color: rgb(235, 246, 255);
+        font-size: 8rem;
+        width: 100%;
+        height: 9rem;
+        z-index: 0;
+        border-top: 1rem solid rgb(0, 0, 0);
+        border-bottom: 1rem solid rgb(0, 0, 0);
+        align-items: center;
+        font-family: 'Dhurjati', sans-serif;
+        &-container {
+            display: flex;
+            .text {
+                position: relative;
+                animation: text 3s infinite linear;
+                max-height: 25vh;
+                margin-top: -4rem;
+                white-space: nowrap;
+                flex-shrink: 0;
+                padding-left: 2rem ;
+            }
+        }
+    }
+}
+
+.footer {
+    background: $background;
+    color: $color;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes text {
+    0%{
+      transform: translateZ(0);
+    }
+    
+    100%{
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+
+  @keyframes galaxy {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+  }
